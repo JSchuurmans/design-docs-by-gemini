@@ -1,0 +1,38 @@
+[project]
+name = "design-doc-agent"
+version = "0.1.0"
+description = "Agentic system for creating a Design Doc."
+authors = [
+    {name="Jetze Schuurmans", email="jetzeschuurmans@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pre-commit>=4.2.0",
+]
+
+[project.scripts]
+hello = "design_doc_agent:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+lint.ignore = ["E501"]
+extend-exclude = [
+  "__pycache__",
+  ".eggs",
+  ".git",
+  ".venv",
+  "build",
+  "dist",
+  "notebooks",
+  ".cache"
+]
+line-length = 100
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
